@@ -7,10 +7,10 @@ This repository bundles the data, scripts, and results used in our "SoK: A Liter
 ## Directory layout
 
 - `LICENSE`: The license file for this repository. The contents of this artifact are licensed under the GNU General Public License v3.0. The paper itself is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
-- `paper.pdf`: PDF our manuscript accepted at ASIA CCS'25.
-- `cve-analysis/`: Data and helper scripts for the CVE study, which shows to prevelance of ReDoS vulnerabilities compared to other types of vulnerabilities (§2.3.2).
-- `regex-engine-analysis/`: Contains the super-linear regex corpus with corresponding input strings, experiment setups, and results quantifying and verifiying the ReDoS defenses across nine programming languages (§4).
-- `github-discussions/`: Raw issue/PR threads where developers discuss ReDoS vulnerabilities and GitHub crawler to collect them (Appendix E).
+- `manuscript.pdf`: PDF of our manuscript accepted at ASIA CCS'25.
+- `cve-analysis/`: Data and helper scripts for the CVE study, which shows the prevalence of ReDoS vulnerabilities compared to other types of vulnerabilities (§2.3.2).
+- `regex-engine-analysis/`: Contains the super-linear regex corpus with corresponding input strings, experiment setups, and results quantifying and verifying the ReDoS defenses across nine programming languages (§4).
+- `github-discussions/`: Raw issue/PR threads where developers discuss ReDoS vulnerabilities and the GitHub crawler to collect them (Appendix E).
 
 More detailed information can be found in the respective directories' `README.md` files.
 

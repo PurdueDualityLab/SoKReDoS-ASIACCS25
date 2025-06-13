@@ -1,0 +1,18 @@
+FROM perl:5.18.4
+
+# Install the JSON module
+RUN cpanm JSON
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the Perl script
+COPY ./perl/run.pl .
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="PerlV5_18_4"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["perl", "run.pl"]

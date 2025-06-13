@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/dotnet/sdk:7.0.407 AS build
+
+# Install dotnet-script globally
+RUN dotnet tool install -g dotnet-script
+
+# Add dotnet-script to the PATH
+ENV PATH="${PATH}:/root/.dotnet/tools"
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the run.csx file
+COPY ./c#/run.csx .
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="NetV7_0_407"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["dotnet", "script", "run.csx"]

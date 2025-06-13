@@ -1,0 +1,18 @@
+FROM golang:1.5.4
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the run.go file
+COPY ./go/run.go .
+
+# Copy the regex_match.go file
+COPY ./go/regex_match.go .
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="Go1_5_4"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["go", "run", "run.go"]

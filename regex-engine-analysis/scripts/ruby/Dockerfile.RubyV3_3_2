@@ -1,0 +1,15 @@
+FROM ruby:3.3.2
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the run.rb file
+COPY ./ruby/run.rb .
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="RubyV3_3_2"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["ruby", "run.rb"]

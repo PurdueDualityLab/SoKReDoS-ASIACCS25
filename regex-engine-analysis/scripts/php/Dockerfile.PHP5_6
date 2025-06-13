@@ -1,0 +1,22 @@
+FROM php:5.6-cli
+
+RUN docker-php-ext-install pcntl
+
+RUN docker-php-ext-configure pcntl --enable-pcntl
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the dataset in dataset.json
+COPY ./dataset.json .
+
+# Copy the run.php file
+COPY ./php/run.php .
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="PHP5_6"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["php", "run.php"]

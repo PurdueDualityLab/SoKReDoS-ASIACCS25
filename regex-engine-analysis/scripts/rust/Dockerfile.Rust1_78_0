@@ -1,0 +1,21 @@
+FROM rust:1.78.0
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the Cargo.toml file
+COPY ./rust/Cargo.toml .
+
+# Copy the src directory
+COPY ./rust/src ./src
+
+# Build
+RUN cargo build --release
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="Rust1_78_0"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["./target/release/redos_experiment"]

@@ -1,0 +1,21 @@
+FROM openjdk:23-jdk-slim
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the run.java file
+COPY ./java/run.java .
+
+# Copy the json-20210307.jar file
+COPY ./java/json-20210307.jar .
+
+# Compile the java file
+RUN javac -cp .:json-20210307.jar run.java
+
+# Set an environment variable to name the experiment
+ENV EXPERIMENT_NAME="Java23"
+
+# Set an environment variable to store dataset file name
+ENV DATASET_FILE="sampled-exponential-and-polynomial-regexes.json"
+
+CMD ["java", "-cp", ".:json-20210307.jar", "run"]

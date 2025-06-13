@@ -51,7 +51,7 @@ The super-linear regex corpus that is generated with the help of [`vuln-regex-de
       },
       ...
     ],
-    complexity: <the predicted time complexity of the regex (i.e., exponential or polynomial)>
+    "complexity": <the predicted time complexity of the regex (i.e., exponential or polynomial)>
   },
   ...
 ]

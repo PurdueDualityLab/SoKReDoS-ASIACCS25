@@ -6,13 +6,13 @@ Here, we measure whether super-linear regexes improved performance in the latest
 
 - `scripts/`: Harnesses and Dockerfiles for the nine language runtimes we test. See below.
 - `results/`: Contains the results of our experiments.
-- `sl-regex-corpus/`: The super-linear regex corpus we use in our experiments with corresponding input strings. Both full dataset and 1000‑regex sample used in the paper are available.
+- `sl-regex-corpus/`: The super-linear regex corpus we use in our experiments with corresponding input strings. Both the full dataset and the 1000‑regex sample used in the paper are available.
 - `plot.py`: Plots the performance of regex matching in old vs. latest engines in different programming languages (Figure 5 in the paper). You need to have `matplotlib` and `numpy` installed to run this script.
 
 ### Inside `scripts/`
 
 - One sub‑directory per language (e.g., `python/`, `java/`). Each holds:
-  - There are two Dockerfiles, one is for the older version of the language runtime, and the other is for a newer version (i.e., before and after the ReDoS defense was possibly introduced). Naming convention is `Dockerfile.<version>`.
+  - There are two Dockerfiles, one is for the older version of the language runtime, and the other is for a newer version (i.e., before and after the ReDoS defense was possibly introduced). The naming convention is `Dockerfile.<version>`.
   - Small helper scripts to measure the time taken to match each regex in our corpus against each corresponding input string.
 - `experiment.sh`: The main script to run the experiments. The results are saved in the `results/` directory as JSON files in each language sub‑directory.
 - 
@@ -45,7 +45,7 @@ The super-linear regex corpus that is generated with the help of [`vuln-regex-de
             when matched against the regex>
         ],
         "pump": [
-            <a string that is repated one or more times and appended to the prefix to create a super-linear input>
+            <a string that is repeated one or more times and appended to the prefix to create a super-linear input>
         ],
         "suffix": <suffix of the input string that will be appended to the prefix + pump>
       },
@@ -57,7 +57,7 @@ The super-linear regex corpus that is generated with the help of [`vuln-regex-de
 ]
 ```
 
-For result files, the structure is the same, but each input contain a dictionary called `results` that logs the matching information:
+For result files, the structure is the same, but each input contains a dictionary called `results` that logs the matching information:
 
 ```json
 {
